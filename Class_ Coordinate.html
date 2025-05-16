@@ -1,0 +1,2813 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056) -->
+<html lang="en"><script type="text/javascript" src="chrome-extension://nhpjggchkhnlbgdfcbgpdpkifemomkpg/pageScripts/main.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <title>Class: Coordinate</title>
+
+    <script src="./Class_ Coordinate_files/prettify.js.下载"> </script>
+    <script src="./Class_ Coordinate_files/lang-css.js.下载"> </script>
+    <link type="text/css" rel="stylesheet" href="./Class_ Coordinate_files/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="./Class_ Coordinate_files/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="./Class_ Coordinate_files/custom.css">
+    <!--[if lt IE 9]>
+    <script src="scripts/html5shiv.min.js"></script>
+    <script src="scripts/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div style="position:fixed;top:0px;left:0px;"><h1 class="page-title">Class: Coordinate</h1></div>
+<div id="main" style="margin-top:77px;">
+    
+
+
+
+
+
+<nav class="classnav scroll-styled">
+
+    <h5><a href="#main" style="color:#000">class : Coordinate</a></h5>
+    
+        <h5>Members</h5>
+        <ul>
+            <li><a href="#x">x（横坐标值）</a></li>
+            <li><a href="#y">y（纵坐标值）</a></li>
+            <li><a href="#z">z（高度坐标值）</a></li>
+        </ul>
+    
+
+    
+
+        
+            
+            
+            <h5>Static Methods</h5>
+            <ul>
+                <li><a href="#.toNumberArrays">toNumberArrays（将坐标对象转换为数字数组）</a></li>
+                <li><a href="#.toCoordinates">toCoordinates（将数字数组转换为坐标对象数组）</a></li>
+            </ul>
+        
+        <h5>Methods</h5>
+        <ul>
+            <li><a class="inherit" href="#set">set（设置坐标的x、y值）</a></li>
+            <li><a class="inherit" href="#abs">abs（返回坐标的绝对值）</a></li>
+            <li><a class="inherit" href="#round">round（对坐标值进行四舍五入）</a></li>
+            <li><a class="inherit" href="#distanceTo">distanceTo（计算到另一坐标的距离）</a></li>
+            <li><a class="inherit" href="#mag">mag（计算坐标向量的模长）</a></li>
+            <li><a class="inherit" href="#copy">copy（复制坐标对象）</a></li>
+            <li><a class="inherit" href="#add">add（坐标加法运算）</a></li>
+            <li><a class="inherit" href="#sub">sub（坐标减法运算）</a></li>
+            <li><a class="inherit" href="#substract">substract（坐标减法运算）[替代拼写]</a></li>
+            <li><a class="inherit" href="#multi">multi（坐标乘法运算）</a></li>
+            <li><a class="inherit" href="#div">div（坐标除法运算）</a></li>
+            <li><a class="inherit" href="#equals">equals（检查坐标是否相等）</a></li>
+            <li><a class="inherit" href="#isZero">isZero（检查坐标是否为零点）</a></li>
+            <li><a class="inherit" href="#toArray">toArray（将坐标转换为数组）</a></li>
+            <li><a class="inherit" href="#toFixed">toFixed（格式化坐标值为指定小数位）</a></li>
+            <li><a class="inherit" href="#toJSON">toJSON（将坐标转换为JSON格式）</a></li>
+        </ul>
+    
+
+    
+</nav>
+
+
+<section class="classmain">
+    
+
+
+<header>
+    
+        <h2>Coordinate</h2>
+        
+            <div class="class-description">Represents a coordinate point <br>
+e.g. <br>
+A geographical point (longitude, latitude)</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <h4 class="name" id="Coordinate"><span class="type-signature"></span>new <a href="#Coordinate">Coordinate</a><span class="signature">()</span>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Coordinate.js#L16" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Coordinate.js#L16" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#Coordinate" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    
+
+
+
+
+
+    <!--<h5>Examples:</h5>-->
+    
+    
+        <pre class="prettyprint"><code><span class="kwd">var</span><span class="pln"> coord </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Coordinate</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">);</span></code></pre>
+    
+
+    
+        <pre class="prettyprint"><code><span class="kwd">var</span><span class="pln"> coord </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Coordinate</span><span class="pun">([</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">]);</span></code></pre>
+    
+
+    
+        <pre class="prettyprint"><code><span class="kwd">var</span><span class="pln"> coord </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Coordinate</span><span class="pun">({</span><span class="pln"> x </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> y </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">});</span></code></pre>
+    
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+    <h5>Extends:</h5>
+    
+
+
+    <ul>
+        <li><a href="https://maptalks.org/maptalks.js/api/1.x/Position.html">Position</a></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+    
+    </div>
+
+    <!-- 
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="Position.html">Position</a></li>
+    </ul>
+
+
+     -->
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<li>
+<h4 class="name" id="x"><span class="type-signature"></span>x<span class="type-signature"></span>
+
+<!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L15" class="improvelink">[help to improve]</a>
+    
+    <a href="#x" class="improvelink">[link]</a></h4> -->
+</h4></li>
+
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#x">Position#x</a>
+    </li></ul>
+    
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">x value</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#x">Position#x</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js">geo/Position.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L15">line 15</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+<hr>
+        
+            
+<li>
+<h4 class="name" id="y"><span class="type-signature"></span>y<span class="type-signature"></span>
+
+<!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L19" class="improvelink">[help to improve]</a>
+    
+    <a href="#y" class="improvelink">[link]</a></h4> -->
+</h4></li>
+
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#y">Position#y</a>
+    </li></ul>
+    
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">y value</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#y">Position#y</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js">geo/Position.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L19">line 19</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+<hr>
+        
+            
+<li>
+<h4 class="name" id="z"><span class="type-signature"></span>z<span class="type-signature"></span>
+
+<!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L23" class="improvelink">[help to improve]</a>
+    
+    <a href="#z" class="improvelink">[link]</a></h4> -->
+</h4></li>
+
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#z">Position#z</a>
+    </li></ul>
+    
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>z</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">z value, it's a pure property and doesn't take part in caculation for now.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#z">Position#z</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js">geo/Position.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L23">line 23</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+<hr>
+        
+    
+
+    
+        
+                    <h3 class="subsection-title">Static Methods</h3>
+                
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id=".toNumberArrays"><span class="type-signature">(static) </span><a href="#.toNumberArrays">toNumberArrays</a><span class="signature">(coordinates)</span>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Coordinate.js#L26" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Coordinate.js#L26" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#.toNumberArrays" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Convert one or more Coordinate objects to GeoJSON style coordinates
+</div>
+
+
+    <!--<h5>Example:</h5>-->
+    
+    
+        <pre class="prettyprint"><code><span class="com">// result is [[100,0], [101,1]]</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> numCoords </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Coordinate</span><span class="pun">.</span><span class="pln">toNumberArrays</span><span class="pun">([</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Coordinate</span><span class="pun">(</span><span class="lit">100</span><span class="pun">,</span><span class="lit">0</span><span class="pun">),</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Coordinate</span><span class="pun">(</span><span class="lit">101</span><span class="pun">,</span><span class="lit">1</span><span class="pun">)]);</span></code></pre>
+    
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>coordinates</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="">Coordinate</a></span>
+|
+
+<span class="param-type">Array.&lt;<a href="">Coordinate</a>&gt;</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">coordinates to convert</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Array.&lt;Number&gt;|Array.&lt;Array.&lt;Number&gt;&gt;</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id=".toCoordinates"><span class="type-signature">(static) </span><a href="#.toCoordinates">toCoordinates</a><span class="signature">(coordinates)</span>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Coordinate.js#L42" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Coordinate.js#L42" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#.toCoordinates" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Convert one or more GeoJSON style coordiantes to Coordinate objects
+</div>
+
+
+    <!--<h5>Example:</h5>-->
+    
+    
+        <pre class="prettyprint"><code><span class="kwd">var</span><span class="pln"> coordinates </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Coordinate</span><span class="pun">.</span><span class="pln">toCoordinates</span><span class="pun">([[</span><span class="lit">100</span><span class="pun">,</span><span class="lit">0</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">101</span><span class="pun">,</span><span class="lit">1</span><span class="pun">]]);</span></code></pre>
+    
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>coordinates</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Number&gt;</span>
+|
+
+<span class="param-type">Array.&lt;Array.&lt;Number&gt;&gt;</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">coordinates to convert</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">Coordinate</a>|Array.&lt;<a href="">Coordinate</a>&gt;</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+
+        
+                    <h3 class="subsection-title">Methods</h3>
+                
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="set"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#set">set</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L44" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L44" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#set" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Set point or coordinate's x, y value
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#set">Position#set</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">Coordinate</a>|<a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="abs"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#abs">abs</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L55" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L55" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#abs" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Return abs value of the point
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#abs">Position#abs</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">Coordinate</a>|<a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    abs point
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="round"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#round">round</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L76" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L76" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#round" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Like math.round, rounding the point's xy.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#round">Position#round</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">Coordinate</a>|<a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    rounded point
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="distanceTo"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#distanceTo">distanceTo</a><span class="signature">(point)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L95" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L95" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#distanceTo" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Returns the distance between the current and the given point.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="">Coordinate</a></span>
+|
+
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">another point</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#distanceTo">Position#distanceTo</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Number</span>:
+
+        
+<!-- <div class="param-desc"> -->
+    distance
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="mag"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#mag">mag</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L107" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L107" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#mag" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Return the magnitude of this point: this is the Euclidean
+distance from the 0, 0 coordinate to this point's x and y
+coordinates.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#mag">Position#mag</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Number</span>:
+
+        
+<!-- <div class="param-desc"> -->
+    magnitude
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="copy"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#copy">copy</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L125" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L125" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#copy" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Returns a copy of the coordinate
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#copy">Position#copy</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">Coordinate</a>|<a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    copy
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="add"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#add">add</a><span class="signature">(x, y<span class="signature-attributes">opt</span>)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L150" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L150" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#add" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Returns the result of addition of another coordinate.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="">Coordinate</a></span>
+|
+
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>
+|
+
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">coordinate to add</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">optional, coordinate to add</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#add">Position#add</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">Coordinate</a>|<a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    result
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="sub"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#sub">sub</a><span class="signature">(x, y<span class="signature-attributes">opt</span>)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L190" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L190" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#sub" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Returns the result of subtraction of another coordinate.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="">Coordinate</a></span>
+|
+
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>
+|
+
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">coordinate to add</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">optional, coordinate to add</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#sub">Position#sub</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">Coordinate</a>|<a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    result
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="substract"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#substract">substract</a><span class="signature">(x, y<span class="signature-attributes">opt</span>)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L211" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L211" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#substract" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Alias for sub
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="">Coordinate</a></span>
+|
+
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>
+|
+
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">coordinate to add</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">optional, coordinate to add</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#substract">Position#substract</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">Coordinate</a>|<a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    result
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="multi"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#multi">multi</a><span class="signature">(ratio)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L220" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L220" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#multi" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Returns the result of multiplication of the current coordinate by the given number.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ratio</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">ratio to multi</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#multi">Position#multi</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">Coordinate</a>|<a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    result
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="div"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#div">div</a><span class="signature">(n)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L235" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L235" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#div" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Returns the result of division of the current point by the given number.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>n</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">number to div</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#div">Position#div</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">Coordinate</a>|<a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    result
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="equals"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#equals">equals</a><span class="signature">(c)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L248" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L248" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#equals" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Compare with another coordinate to see whether they are equal.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>c</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="">Coordinate</a></span>
+|
+
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">coordinate to compare</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#equals">Position#equals</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Boolean</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="isZero"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#isZero">isZero</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L267" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L267" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#isZero" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Whether the coordinate/point is zero
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#isZero">Position#isZero</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="toArray"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#toArray">toArray</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L275" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L275" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#toArray" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Convert to a number array [x, y]
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#toArray">Position#toArray</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Array.&lt;Number&gt;</span>:
+
+        
+<!-- <div class="param-desc"> -->
+    number array
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="toFixed"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#toFixed">toFixed</a><span class="signature">(n)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L287" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L287" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#toFixed" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Formats coordinate number using fixed-point notation.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>n</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">The number of digits to appear after the decimal point</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#toFixed">Position#toFixed</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">Coordinate</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    fixed coordinate
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="toJSON"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#toJSON">toJSON</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L295" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/geo/Position.js#L295" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#toJSON" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Convert to a json object {x : .., y : ..}
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+    <h5>Inherited From:</h5>    
+    <ul><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Position.html#toJSON">Position#toJSON</a>
+    </li></ul>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Object</span>:
+
+        
+<!-- <div class="param-desc"> -->
+    json
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav class="page-nav">
+    <h2><a href="https://maptalks.org/maptalks.js/api/1.x/index.html">V1.0.0-rc.33</a></h2><h4>Classes</h4><ul></ul><h5>Map</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Map.html">Map</a></li></ul><h5>Layer</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/TileSystem.html">TileSystem</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/TileLayer.html">TileLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/GroupTileLayer.html">GroupTileLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/WMSTileLayer.html">WMSTileLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/OverlayLayer.html">OverlayLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/VectorLayer.html">VectorLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/CanvasLayer.html">CanvasLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ParticleLayer.html">ParticleLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ImageLayer.html">ImageLayer</a></li></ul><h5>Geometry</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Geometry.html">Geometry</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Path.html">Path</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Marker.html">Marker</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/TextMarker.html">TextMarker</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Label.html">Label</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/TextBox.html">TextBox</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Polygon.html">Polygon</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/LineString.html">LineString</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Curve.html">Curve</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ArcCurve.html">ArcCurve</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/QuadBezierCurve.html">QuadBezierCurve</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/CubicBezierCurve.html">CubicBezierCurve</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ConnectorLine.html">ConnectorLine</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ArcConnectorLine.html">ArcConnectorLine</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Ellipse.html">Ellipse</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Circle.html">Circle</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Sector.html">Sector</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Rectangle.html">Rectangle</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/GeometryCollection.html">GeometryCollection</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/MultiGeometry.html">MultiGeometry</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/MultiPoint.html">MultiPoint</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/MultiLineString.html">MultiLineString</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/MultiPolygon.html">MultiPolygon</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/GeoJSON.html">GeoJSON</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/GeometryEditor.html">GeometryEditor</a></li></ul><h5>Basic types</h5><ul><li><a href="">Coordinate</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Extent.html">Extent</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/PointExtent.html">PointExtent</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Position.html">Position</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Size.html">Size</a></li></ul><h5>Maptool</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/MapTool.html">MapTool</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/DrawTool.html">DrawTool</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/DistanceTool.html">DistanceTool</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/AreaTool.html">AreaTool</a></li></ul><h5>Ui</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.UIComponent.html">ui.UIComponent</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.UIMarker.html">ui.UIMarker</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.InfoWindow.html">ui.InfoWindow</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.ToolTip.html">ui.ToolTip</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.Menu.html">ui.Menu</a></li></ul><h5>Control</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Control.html">control.Control</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Zoom.html">control.Zoom</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.LayerSwitcher.html">control.LayerSwitcher</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Attribution.html">control.Attribution</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Panel.html">control.Panel</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Toolbar.html">control.Toolbar</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Overview.html">control.Overview</a></li></ul><h5>Core</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Ajax.html">Ajax</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Class.html">Class</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/MapboxUtil.html">MapboxUtil</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Util.html">Util</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/DomUtil.html">DomUtil</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/StringUtil.html">StringUtil</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/worker.Actor.html">worker.Actor</a></li></ul><h5>Animation</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/animation.Easing.html">animation.Easing</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/animation.Frame.html">animation.Frame</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/animation.Player.html">animation.Player</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/animation.Animation.html">animation.Animation</a></li></ul><h5>Geo</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/CRS.html">CRS</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.Identity.html">measurer.Identity</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.DEFAULT.html">measurer.DEFAULT</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.Measurer.html">measurer.Measurer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.WGS84Sphere.html">measurer.WGS84Sphere</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.BaiduSphere.html">measurer.BaiduSphere</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.DEFAULT.html">projection.DEFAULT</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.BAIDU.html">projection.BAIDU</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.EPSG3857.html">projection.EPSG3857</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.EPSG4326.html">projection.EPSG4326</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.EPSG9807.html">projection.EPSG9807</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.IDENTITY.html">projection.IDENTITY</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.EPSG4490.html">projection.EPSG4490</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Transformation.html">Transformation</a></li></ul><h5>Handler</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Handler.html">Handler</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/DragHandler.html">DragHandler</a></li></ul><h5>Other</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/CollisionIndex.html">CollisionIndex</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/renderer.CanvasRenderer.html">renderer.CanvasRenderer</a></li></ul><h4>Namespaces</h4><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.html">measurer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.html">projection</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/renderer.html">renderer</a></li></ul><h4>Mixins</h4><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html">Eventable</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/JSONAble.html">JSONAble</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.Common.html">measurer.Common</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.Common.html">projection.Common</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Handlerable.html">Handlerable</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/CenterMixin.html">CenterMixin</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/TextEditable.html">TextEditable</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Renderable.html">Renderable</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.Menuable.html">ui.Menuable</a></li></ul><h3>Global</h3><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#INTERNAL_LAYER_PREFIX">INTERNAL_LAYER_PREFIX</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#RESOURCE_PROPERTIES">RESOURCE_PROPERTIES</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#RESOURCE_SIZE_PROPERTIES">RESOURCE_SIZE_PROPERTIES</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#NUMERICAL_PROPERTIES">NUMERICAL_PROPERTIES</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#COLOR_PROPERTIES">COLOR_PROPERTIES</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#runTaskAsync">runTaskAsync</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#IS_NODE">IS_NODE</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#getDxDyRad">getDxDyRad</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#registerWorkerAdapter">registerWorkerAdapter</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#code">code</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#queryTerrainCoordinates">queryTerrainCoordinates</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Thu Mar 14 2024 17:12:53 GMT+0800 (中国标准时间)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="./Class_ Coordinate_files/linenumber.js.下载"> </script>
+
+
+<iframe class="api-interceptor" frameborder="none" src="./Class_ Coordinate_files/index.html" style="height: 100% !important; width: 518px !important; min-width: 1px !important; position: fixed !important; inset: 0px 0px auto auto !important; z-index: 2147483647 !important; transform: translateX(538px) !important; transition: 0.4s !important; box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 15px 2px !important;"></iframe></body></html>

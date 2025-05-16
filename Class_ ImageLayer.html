@@ -1,0 +1,9121 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056) -->
+<html lang="en"><script type="text/javascript" src="chrome-extension://nhpjggchkhnlbgdfcbgpdpkifemomkpg/pageScripts/main.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <title>Class: ImageLayer</title>
+
+    <script src="./Class_ ImageLayer_files/prettify.js.下载"> </script>
+    <script src="./Class_ ImageLayer_files/lang-css.js.下载"> </script>
+    <link type="text/css" rel="stylesheet" href="./Class_ ImageLayer_files/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="./Class_ ImageLayer_files/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="./Class_ ImageLayer_files/custom.css">
+    <!--[if lt IE 9]>
+    <script src="scripts/html5shiv.min.js"></script>
+    <script src="scripts/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div style="position:fixed;top:0px;left:0px;"><h1 class="page-title">Class: ImageLayer</h1></div>
+<div id="main" style="margin-top:77px;">
+    
+
+
+
+
+
+<nav class="classnav scroll-styled">
+
+    <h5><a href="#main" style="color:#000">class : ImageLayer</a></h5>
+    
+        <h5>Members</h5>
+        <ul>
+        
+            <li><a href="#options">options</a></li>
+        
+        </ul>
+    
+        <h5>Methods</h5>
+        <ul>
+            <li><a href="#setImages">setImages 设置图像（设置图像图层的图像列表）</a></li>
+            <li><a href="#getImages">getImages 获取图像（获取图像图层的图像列表）</a></li>
+            <li><a class="inherit" href="#load">load 加载（加载图像图层的内容）</a></li>
+            <li><a class="inherit" href="#getId">getId 获取ID（获取图像图层的唯一标识）</a></li>
+            <li><a class="inherit" href="#setId">setId 设置ID（设置图像图层的唯一标识）</a></li>
+            <li><a class="inherit" href="#addTo">addTo 添加到地图（将图像图层添加到指定地图）</a></li>
+            <li><a class="inherit" href="#setZIndex">setZIndex 设置层级（设置图像图层的层级顺序）</a></li>
+            <li><a class="inherit" href="#getZIndex">getZIndex 获取层级（获取图像图层的层级顺序）</a></li>
+            <li><a class="inherit" href="#getMinZoom">getMinZoom 获取最小缩放级别（获取图像图层的最小缩放级别）</a></li>
+            <li><a class="inherit" href="#getMaxZoom">getMaxZoom 获取最大缩放级别（获取图像图层的最大缩放级别）</a></li>
+            <li><a class="inherit" href="#getOpacity">getOpacity 获取透明度（获取图像图层的透明度值）</a></li>
+            <li><a class="inherit" href="#setOpacity">setOpacity 设置透明度（设置图像图层的透明度值）</a></li>
+            <li><a class="inherit" href="#isCanvasRender">isCanvasRender 是否使用画布渲染（判断图像图层是否使用画布渲染）</a></li>
+            <li><a class="inherit" href="#getMap">getMap 获取地图（获取图像图层所属的地图实例）</a></li>
+            <li><a class="inherit" href="#getProjection">getProjection 获取投影（获取图像图层使用的投影方式）</a></li>
+            <li><a class="inherit" href="#bringToFront">bringToFront 置于顶层（将图像图层置于所有图层的最上层）</a></li>
+            <li><a class="inherit" href="#bringToBack">bringToBack 置于底层（将图像图层置于所有图层的最下层）</a></li>
+            <li><a class="inherit" href="#show">show 显示（显示图像图层）</a></li>
+            <li><a class="inherit" href="#hide">hide 隐藏（隐藏图像图层）</a></li>
+            <li><a class="inherit" href="#isVisible">isVisible 是否可见（判断图像图层是否可见）</a></li>
+            <li><a class="inherit" href="#remove">remove 移除（从地图中移除图像图层）</a></li>
+            <li><a class="inherit" href="#getMask">getMask 获取蒙版（获取图像图层的蒙版对象）</a></li>
+            <li><a class="inherit" href="#setMask">setMask 设置蒙版（为图像图层设置蒙版对象）</a></li>
+            <li><a class="inherit" href="#removeMask">removeMask 移除蒙版（移除图像图层的蒙版对象）</a></li>
+            <li><a class="inherit" href="#onLoad">onLoad 加载完成（图像图层加载完成时触发的事件处理）</a></li>
+            <li><a class="inherit" href="#isLoaded">isLoaded 是否已加载（判断图像图层是否已加载完成）</a></li>
+            <li><a class="inherit" href="#getCollisionIndex">getCollisionIndex 获取碰撞索引（获取图像图层的碰撞索引）</a></li>
+            <li><a class="inherit" href="#clearCollisionIndex">clearCollisionIndex 清除碰撞索引（清除图像图层的碰撞索引）</a></li>
+            <li><a class="inherit" href="#on">on 绑定事件（为图像图层绑定事件监听器）</a></li>
+            <li><a class="inherit" href="#addEventListener">addEventListener 添加事件监听器（为图像图层添加事件监听器）</a></li>
+            <li><a class="inherit" href="#once">once 绑定一次性事件（为图像图层绑定一次性事件监听器）</a></li>
+            <li><a class="inherit" href="#off">off 解除事件绑定（解除图像图层的事件监听器）</a></li>
+            <li><a class="inherit" href="#removeEventListener">removeEventListener 移除事件监听器（移除图像图层的事件监听器）</a></li>
+            <li><a class="inherit" href="#listens">listens 检查事件监听（检查图像图层是否绑定了指定事件）</a></li>
+            <li><a class="inherit" href="#getListeningEvents">getListeningEvents 获取监听事件（获取图像图层当前监听的所有事件）</a></li>
+            <li><a class="inherit" href="#copyEventListeners">copyEventListeners 复制事件监听器（复制其他图层的事件监听器到图像图层）</a></li>
+            <li><a class="inherit" href="#fire">fire 触发事件（手动触发图像图层的指定事件）</a></li>
+            <li><a class="inherit" href="#registerJSONType">registerJSONType 注册JSON类型（注册图像图层的JSON类型以支持序列化）</a></li>
+            <li><a class="inherit" href="#getJSONClass">getJSONClass 获取JSON类（获取图像图层的JSON类定义）</a></li>
+            <li><a class="inherit" href="#getJSONType">getJSONType 获取JSON类型（获取图像图层的JSON类型标识）</a></li>
+            <li><a class="inherit" href="#registerRenderer">registerRenderer 注册渲染器（为图像图层注册自定义渲染器）</a></li>
+            <li><a class="inherit" href="#getRendererClass">getRendererClass 获取渲染器类（获取图像图层使用的渲染器类）</a></li>
+            <li><a class="inherit" href="#callInitHooks">callInitHooks 调用初始化钩子（调用图像图层的初始化钩子函数）</a></li>
+            <li><a class="inherit" href="#setOptions">setOptions 设置选项（设置图像图层的配置选项）</a></li>
+            <li><a class="inherit" href="#config">config 配置（配置图像图层的属性）</a></li>
+            <li><a class="inherit" href="#onConfig">onConfig 配置变更（处理图像图层配置变更时的逻辑）</a></li>
+        </ul>
+    
+
+    
+        <h5>Events</h5>
+        <ul>
+            <li><a href="#event:idchange">idchange ID变更（图像图层的ID发生变更时触发）</a></li>
+            <li><a href="#event:setzindex">setzindex 设置层级（图像图层的层级被设置或更改时触发）</a></li>
+            <li><a href="#event:setopacity">setopacity 设置透明度（图像图层的透明度被设置或更改时触发）</a></li>
+            <li><a href="#event:show">show 显示（图像图层显示时触发）</a></li>
+            <li><a href="#event:hide">hide 隐藏（图像图层隐藏时触发）</a></li>
+            <li><a href="#event:renderercreate">renderercreate 渲染器创建（图像图层的渲染器创建时触发）</a></li>
+            <li><a href="#event:visiblechange">visiblechange 可见性变更（图像图层的可见性状态发生变更时触发）</a></li>
+            <li><a href="#event:resourceload">resourceload 资源加载（图像图层的资源加载完成时触发）</a></li>
+            <li><a href="#event:canvascreate">canvascreate 画布创建（图像图层的画布创建时触发）</a></li>
+            <li><a href="#event:renderstart">renderstart 渲染开始（图像图层开始渲染时触发）</a></li>
+            <li><a href="#event:renderend">renderend 渲染结束（图像图层渲染完成时触发）</a></li>
+        </ul>
+    
+</nav>
+
+
+<section class="classmain">
+    
+
+
+<header>
+    
+        <h2>ImageLayer</h2>
+        
+            <div class="class-description">A layer used to display images, you can specify each image's geographic extent and opacity</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <h4 class="name" id="ImageLayer"><span class="type-signature"></span>new <a href="#ImageLayer">ImageLayer</a><span class="signature">(id, images<span class="signature-attributes">opt</span>, options<span class="signature-attributes">opt</span>)</span>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/ImageLayer.js#L46" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/ImageLayer.js#L46" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#ImageLayer" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    
+
+
+
+
+
+    <!--<h5>Example:</h5>-->
+    
+    
+        <pre class="prettyprint"><code><span class="kwd">new</span><span class="pln"> </span><span class="typ">ImageLayer</span><span class="pun">(</span><span class="str">"images"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[{</span><span class="pln">
+        url </span><span class="pun">:</span><span class="pln"> </span><span class="str">'http://example.com/foo.png'</span><span class="pun">,</span><span class="pln">
+        extent</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">xmin</span><span class="pun">,</span><span class="pln"> ymin</span><span class="pun">,</span><span class="pln"> xmax</span><span class="pun">,</span><span class="pln"> ymax</span><span class="pun">],</span><span class="pln">
+        opacity </span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
+    </span><span class="pun">}])</span></code></pre>
+    
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">tile layer's id</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>images</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object&gt;</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">images</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">options defined in <a href="#options">ImageLayer</a></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+    <h5>Extends:</h5>
+    
+
+
+    <ul>
+        <li><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Fires:</h5>
+<ul>
+    <li><a href="#event:idchange">idchange</a></li>
+
+    <li><a href="#event:setzindex">setzindex</a></li>
+
+    <li><a href="#event:setopacity">setopacity</a></li>
+
+    <li><a href="#event:show">show</a></li>
+
+    <li><a href="#event:hide">hide</a></li>
+
+    <li><a href="#event:renderercreate">renderercreate</a></li>
+
+    <li><a href="#event:visiblechange">visiblechange</a></li>
+
+    <li><a href="#event:resourceload">resourceload</a></li>
+
+    <li><a href="#event:canvascreate">canvascreate</a></li>
+
+    <li><a href="#event:renderstart">renderstart</a></li>
+
+    <li><a href="#event:renderend">renderend</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+    
+    </div>
+
+    <!-- 
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="Layer.html">Layer</a></li>
+    </ul>
+
+
+     -->
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<li>
+<h4 class="name" id="options"><span class="type-signature">(constant) </span>options<span class="type-signature"></span>
+
+<!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/ImageLayer.js#L21" class="improvelink">[help to improve]</a>
+    
+    <a href="#options" class="improvelink">[link]</a></h4> -->
+</h4></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">ImageLayer's options
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>crossOrigin</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">image's corssOrigin</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>renderer</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    gl
+                
+                </td>
+            
+
+            <td class="description last">ImageLayer's renderer, canvas or gl. gl tiles requires image CORS that canvas doesn't. canvas tiles can't pitch.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>alphaTest</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">only for gl renderer, pixels alpha &lt;= alphaTest will be discarded</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>depthMask</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">only for gl renderer, whether to write into depth buffer</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>depthFunc</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    String
+                
+                </td>
+            
+
+            <td class="description last">only for gl renderer, depth function, available values: never,&lt;, =, &lt;=, &gt;, !=, &gt;=, always</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>attribution</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">the attribution of this layer, you can specify company or other information of this layer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>minZoom</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">the minimum zoom to display the layer, set to -1 to unlimit it.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxZoom</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">the maximum zoom to display the layer, set to -1 to unlimit it.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>visible</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">whether to display the layer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opacity</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    1
+                
+                </td>
+            
+
+            <td class="description last">opacity of the layer, from 0 to 1.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>zIndex</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">z index of the layer</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>hitDetect</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">Whether to enable hit detection for layers for cursor styles on this map, disable it to improve performance.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>globalCompositeOperation</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">(Only for layer rendered with <a href="https://maptalks.org/maptalks.js/api/1.x/renderer.CanvasRenderer.html">CanvasRenderer</a>) globalCompositeOperation of layer's canvas 2d context.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>debugOutline</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    '#0f0'
+                
+                </td>
+            
+
+            <td class="description last">debug outline's color.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cssFilter</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">css filter apply to canvas context's filter</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forceRenderOnMoving</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">force to render layer when map is moving</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forceRenderOnZooming</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">force to render layer when map is zooming</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forceRenderOnRotating</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">force to render layer when map is Rotating</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>collisionScope</code>
+                    
+                        
+                           <span class="signature-attributes">opt</span>
+                        
+                        
+
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+                <td class="default">
+                
+                    layer
+                
+                </td>
+            
+
+            <td class="description last">layer's collision scope: layer or map</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#options">Layer#options</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/ImageLayer.js">layer/ImageLayer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/ImageLayer.js#L21">line 21</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+<hr>
+        
+    
+
+    
+        
+
+        
+                    <h3 class="subsection-title">Methods</h3>
+                
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="setImages"><span class="type-signature"></span><a href="#setImages">setImages</a><span class="signature">(images)</span>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/ImageLayer.js#L66" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/ImageLayer.js#L66" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#setImages" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Set images and redraw
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>images</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object&gt;</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">new images</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="">ImageLayer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getImages"><span class="type-signature"></span><a href="#getImages">getImages</a><span class="signature">()</span>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/ImageLayer.js#L76" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/ImageLayer.js#L76" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getImages" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get images
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Array.&lt;Object&gt;</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="load"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#load">load</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L88" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L88" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#load" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    load the tile layer, can't be overrided by sub-classes
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getId"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getId">getId</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L110" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L110" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getId" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get the layer id
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">String</span>:
+
+        
+<!-- <div class="param-desc"> -->
+    id
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="setId"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#setId">setId</a><span class="signature">(id)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L120" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L120" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#setId" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Set a new id to the layer
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">new layer id</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Fires:</h5>
+<ul>
+    <li><a href="#event:idchange">idchange</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="addTo"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#addTo">addTo</a><span class="signature">(map)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L148" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L148" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#addTo" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Adds itself to a map.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>map</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Map.html">Map</a></span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">map added to</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="setZIndex"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#setZIndex">setZIndex</a><span class="signature">(zIndex)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L158" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L158" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#setZIndex" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Set a z-index to the layer
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>zIndex</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">layer's z-index</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getZIndex"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getZIndex">getZIndex</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L188" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L188" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getZIndex" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get the layer's z-index
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Number</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getMinZoom"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getMinZoom">getMinZoom</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L196" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L196" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getMinZoom" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get Layer's minZoom to display
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Number</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getMaxZoom"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getMaxZoom">getMaxZoom</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L206" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L206" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getMaxZoom" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get Layer's maxZoom to display
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Number</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getOpacity"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getOpacity">getOpacity</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L216" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L216" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getOpacity" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get layer's opacity
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Number</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="setOpacity"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#setOpacity">setOpacity</a><span class="signature">(opacity)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L225" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L225" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#setOpacity" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Set opacity to the layer
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opacity</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">layer's opacity</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="isCanvasRender"><span class="type-signature">(protected) </span><i><span class="type-signature"> (inherited)  </span><a href="#isCanvasRender">isCanvasRender</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L245" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L245" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#isCanvasRender" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    If the layer is rendered by HTML5 Canvas.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Boolean</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getMap"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getMap">getMap</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L254" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L254" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getMap" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get the map that the layer added to
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Map.html">Map</a></span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getProjection"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getProjection">getProjection</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L265" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L265" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getProjection" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get projection of layer's map
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Object</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="bringToFront"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#bringToFront">bringToFront</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L274" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L274" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#bringToFront" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Brings the layer to the top of all the layers
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="bringToBack"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#bringToBack">bringToBack</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L292" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L292" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#bringToBack" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Brings the layer under the bottom of all the layers
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="show"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#show">show</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L310" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L310" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#show" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Show the layer
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="hide"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#hide">hide</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L343" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L343" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#hide" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Hide the layer
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="isVisible"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#isVisible">isVisible</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L377" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L377" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#isVisible" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Whether the layer is visible now.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Boolean</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="remove"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#remove">remove</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L400" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L400" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#remove" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Remove itself from the map added to.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getMask"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getMask">getMask</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L417" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L417" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getMask" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get the mask geometry of the layer
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Geometry.html">Geometry</a></span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="setMask"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#setMask">setMask</a><span class="signature">(mask)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L426" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L426" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#setMask" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Set a mask geometry on the layer, only the area in the mask will be displayed.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mask</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Geometry.html">Geometry</a></span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">mask geometry, can only be a Marker with vector symbol, a Polygon or a MultiPolygon</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="removeMask"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#removeMask">removeMask</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L458" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L458" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#removeMask" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Remove the mask
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="onLoad"><span class="type-signature">(protected) </span><i><span class="type-signature"> (inherited)  </span><a href="#onLoad">onLoad</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L476" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L476" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#onLoad" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Prepare Layer's loading, this is a method intended to be overrided by subclasses.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Boolean</span>:
+
+        
+<!-- <div class="param-desc"> -->
+    true to continue loading, false to cease.
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="isLoaded"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#isLoaded">isLoaded</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L487" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L487" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#isLoaded" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Whether the layer is loaded
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Boolean</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getCollisionIndex"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getCollisionIndex">getCollisionIndex</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L495" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L495" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getCollisionIndex" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get layer's collision index
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/CollisionIndex.html">CollisionIndex</a></span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="clearCollisionIndex"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#clearCollisionIndex">clearCollisionIndex</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L513" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L513" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#clearCollisionIndex" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Clear layer's collision index.
+Will ignore if collisionScope is not layer
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="on"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#on">on</a><span class="signature">(eventsOn, handler, context<span class="signature-attributes">opt</span>)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L16" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L16" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#on" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Register a handler function to be called whenever this event is fired.
+</div>
+
+
+    <!--<h5>Example:</h5>-->
+    
+    
+        <pre class="prettyprint"><code><span class="pln">foo</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="str">'mousedown mousemove mouseup'</span><span class="pun">,</span><span class="pln"> onMouseEvent</span><span class="pun">,</span><span class="pln"> foo</span><span class="pun">);</span></code></pre>
+    
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventsOn</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">event types to register, seperated by space if more than one.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>handler</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">handler function to be called</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">the context of the handler</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html#.on">Eventable.on</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Any</span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="addEventListener"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#addEventListener">addEventListener</a><span class="signature">(eventTypes, handler, context<span class="signature-attributes">opt</span>)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L87" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L87" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#addEventListener" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Alias for <a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html#.on">on</a>
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventTypes</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">event types to register, seperated by space if more than one.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>handler</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">handler function to be called</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">the context of the handler</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html#.addEventListener">Eventable.addEventListener</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="once"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#once">once</a><span class="signature">(eventTypes, handler, context<span class="signature-attributes">opt</span>)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L100" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L100" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#once" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Same as on, except the listener will only get fired once and then removed.
+</div>
+
+
+    <!--<h5>Example:</h5>-->
+    
+    
+        <pre class="prettyprint"><code><span class="pln">foo</span><span class="pun">.</span><span class="pln">once</span><span class="pun">(</span><span class="str">'mousedown mousemove mouseup'</span><span class="pun">,</span><span class="pln"> onMouseEvent</span><span class="pun">,</span><span class="pln"> foo</span><span class="pun">);</span></code></pre>
+    
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventTypes</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">event types to register, seperated by space if more than one.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>handler</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">listener handler</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">the context of the handler</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html#.once">Eventable.once</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="off"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#off">off</a><span class="signature">(eventsOff, handler, context<span class="signature-attributes">opt</span>)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L128" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L128" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#off" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Unregister the event handler for the specified event types.
+</div>
+
+
+    <!--<h5>Example:</h5>-->
+    
+    
+        <pre class="prettyprint"><code><span class="pln">foo</span><span class="pun">.</span><span class="pln">off</span><span class="pun">(</span><span class="str">'mousedown mousemove mouseup'</span><span class="pun">,</span><span class="pln"> onMouseEvent</span><span class="pun">,</span><span class="pln"> foo</span><span class="pun">);</span></code></pre>
+    
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventsOff</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">event types to unregister, seperated by space if more than one.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>handler</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">listener handler</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">the context of the handler</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html#.off">Eventable.off</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="removeEventListener"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#removeEventListener">removeEventListener</a><span class="signature">(eventTypes, handler, context<span class="signature-attributes">opt</span>)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L179" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L179" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#removeEventListener" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Alias for <a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html#.off">off</a>
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventTypes</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">event types to unregister, seperated by space if more than one.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>handler</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">listener handler</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">the context of the handler</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html#.removeEventListener">Eventable.removeEventListener</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="listens"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#listens">listens</a><span class="signature">(eventType, hanlder<span class="signature-attributes">opt</span>, context<span class="signature-attributes">opt</span>)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L192" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L192" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#listens" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Returns listener's count registered for the event type.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventType</code>
+                
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">an event type</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>hanlder</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">listener function</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code>
+                
+                    
+                        <span class="signature-attributes">opt</span>
+                    
+                    
+                    
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">the context of the handler</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html#.listens">Eventable.listens</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Number</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getListeningEvents"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getListeningEvents">getListeningEvents</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L221" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L221" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getListeningEvents" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get all the listening event types
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html#.getListeningEvents">Eventable.getListeningEvents</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">Array.&lt;String&gt;</span>:
+
+        
+<!-- <div class="param-desc"> -->
+    events
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="copyEventListeners"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#copyEventListeners">copyEventListeners</a><span class="signature">(target)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L234" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L234" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#copyEventListeners" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Copy all the event listener to the target object
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">target object to copy to.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html#.copyEventListeners">Eventable.copyEventListeners</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="fire"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#fire">fire</a><span class="signature">(eventType, param)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L255" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Eventable.js#L255" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#fire" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Fire an event, causing all handlers for that event name to run.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventType</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">an event type to fire</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">parameters for the listener function.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html#.fire">Eventable.fire</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="registerJSONType"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#registerJSONType">registerJSONType</a><span class="signature">(type)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/JSONAble.js#L10" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/JSONAble.js#L10" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#registerJSONType" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    It is a static method. <br>
+Register layer for JSON serialization and assign a JSON type.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">JSON type</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/JSONAble.html#.registerJSONType">JSONAble.registerJSONType</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getJSONClass"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getJSONClass">getJSONClass</a><span class="signature">(type)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/JSONAble.js#L28" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/JSONAble.js#L28" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getJSONClass" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    It is a static method. <br>
+Get class of input JSON type
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">JSON type</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/JSONAble.html#.getJSONClass">JSONAble.getJSONClass</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Class.html">Class</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    Class
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getJSONType"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getJSONType">getJSONType</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/JSONAble.js#L42" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/JSONAble.js#L42" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getJSONType" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get object's JSON Type
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/JSONAble.html#.getJSONType">JSONAble.getJSONType</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">String</span>:
+
+        
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="registerRenderer"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#registerRenderer">registerRenderer</a><span class="signature">(name, clazz)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/Renderable.js#L8" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/Renderable.js#L8" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#registerRenderer" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Register a renderer class with the given name.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">renderer's register key</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>clazz</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">renderer's class, a function (not necessarily a <a href="https://maptalks.org/maptalks.js/api/1.x/Class.html">Class</a>).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/Renderable.html#.registerRenderer">Renderable.registerRenderer</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">*</span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="getRendererClass"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#getRendererClass">getRendererClass</a><span class="signature">(name)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/Renderable.js#L25" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/Renderable.js#L25" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#getRendererClass" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Get the registered renderer class by the given name
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">renderer's register key</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+    <h5>Mixes From:</h5>
+    <ul><li>
+        
+            <a href="https://maptalks.org/maptalks.js/api/1.x/Renderable.html#.getRendererClass">Renderable.getRendererClass</a>
+            
+        
+    </li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature">function</span>:
+
+        
+<!-- <div class="param-desc"> -->
+    renderer's class
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="callInitHooks"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#callInitHooks">callInitHooks</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Class.js#L80" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Class.js#L80" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#callInitHooks" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Visit and call all the init hooks defined on Class and its parents.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Class.html">Class</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="setOptions"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#setOptions">setOptions</a><span class="signature">(options)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Class.js#L91" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Class.js#L91" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#setOptions" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Merges options with the default options of the object.
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">options to set</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Class.html">Class</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="config"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#config">config</a><span class="signature">(conf)</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Class.js#L121" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Class.js#L121" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#config" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    1. Return object's options if no parameter is provided. <br>
+
+2. update an option and enable/disable the handler if a handler with the same name existed.
+</div>
+
+
+    <!--<h5>Example:</h5>-->
+    
+    
+        <pre class="prettyprint"><code><span class="com">// Get marker's options;</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> options </span><span class="pun">=</span><span class="pln"> marker</span><span class="pun">.</span><span class="pln">config</span><span class="pun">();</span><span class="pln">
+</span><span class="com">// Set map's option "draggable" to false and disable map's draggable handler.</span><span class="pln">
+map</span><span class="pun">.</span><span class="pln">config</span><span class="pun">(</span><span class="str">'draggable'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// You can update more than one options like this:</span><span class="pln">
+map</span><span class="pun">.</span><span class="pln">config</span><span class="pun">({</span><span class="pln">
+    </span><span class="str">'scrollWheelZoom'</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">'doubleClickZoom'</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pln">
+</span><span class="pun">});</span></code></pre>
+    
+
+
+
+
+<!--  -->
+
+
+
+
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Parameter</th>
+        
+        <th>Type</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>conf</code>
+                
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            <td class="description last">config to update</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+<span class="type-signature"><a href="https://maptalks.org/maptalks.js/api/1.x/Class.html">Class</a></span>:
+
+        
+<!-- <div class="param-desc"> -->
+    this
+<!-- </div> -->
+
+
+
+    
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="onConfig"><span class="type-signature"></span><i><span class="type-signature"> (inherited)  </span><a href="#onConfig">onConfig</a><span class="signature">()</span></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Class.js#L159" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/core/Class.js#L159" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#onConfig" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    Default callback when config is called
+</div>
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+    
+
+    
+
+    
+        <h3 class="subsection-title">Events</h3>
+
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="event:idchange"><i><span class="type-signature"> (inherited)  </span><a href="#event:idchange">idchange</a></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L126" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L126" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#event:idchange" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    idchange event.
+</div>
+
+
+
+
+<!-- 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+ -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">idchange</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">the layer fires the event</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>old</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">value of the old id</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>new</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">value of the new id</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#event:idchange">Layer#event:idchange</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js">layer/Layer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L126">line 126</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="event:setzindex"><i><span class="type-signature"> (inherited)  </span><a href="#event:setzindex">setzindex</a></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L171" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L171" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#event:setzindex" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    setzindex event.
+</div>
+
+
+
+
+<!-- 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+ -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">setzindex</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">the layer fires the event</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>zIndex</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">value of the zIndex</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#event:setzindex">Layer#event:setzindex</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js">layer/Layer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L171">line 171</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="event:setopacity"><i><span class="type-signature"> (inherited)  </span><a href="#event:setopacity">setopacity</a></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L227" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L227" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#event:setopacity" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    setopacity event.
+</div>
+
+
+
+
+<!-- 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+ -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">setopacity</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">the layer fires the event</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opacity</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">value of the opacity</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#event:setopacity">Layer#event:setopacity</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js">layer/Layer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L227">line 227</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="event:show"><i><span class="type-signature"> (inherited)  </span><a href="#event:show">show</a></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L325" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L325" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#event:show" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    show event.
+</div>
+
+
+
+
+<!-- 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+ -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">show</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">the layer fires the event</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#event:show">Layer#event:show</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js">layer/Layer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L325">line 325</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="event:hide"><i><span class="type-signature"> (inherited)  </span><a href="#event:hide">hide</a></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L358" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L358" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#event:hide" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    hide event.
+</div>
+
+
+
+
+<!-- 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+ -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">hide</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">the layer fires the event</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#event:hide">Layer#event:hide</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js">layer/Layer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L358">line 358</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="event:renderercreate"><i><span class="type-signature"> (inherited)  </span><a href="#event:renderercreate">renderercreate</a></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L584" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L584" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#event:renderercreate" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    renderercreate event, fired when renderer is created.
+</div>
+
+
+
+
+<!-- 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+ -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">renderercreate</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">the layer fires the event</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>renderer</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Any</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">renderer of the layer</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#event:renderercreate">Layer#event:renderercreate</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js">layer/Layer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L584">line 584</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="event:visiblechange"><i><span class="type-signature"> (inherited)  </span><a href="#event:visiblechange">visiblechange</a></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L659" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L659" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#event:visiblechange" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    visiblechange event.
+</div>
+
+
+
+
+<!-- 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+ -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">visiblechange</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">the layer fires the event</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>visible</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">value of visible</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#event:visiblechange">Layer#event:visiblechange</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js">layer/Layer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/layer/Layer.js#L659">line 659</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="event:resourceload"><i><span class="type-signature"> (inherited)  </span><a href="#event:resourceload">resourceload</a></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L81" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L81" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#event:resourceload" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    resourceload event, fired when external resources of the layer complete loading.
+</div>
+
+
+
+
+<!-- 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+ -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">resourceload</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">layer</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#event:resourceload">Layer#event:resourceload</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js">renderer/layer/CanvasRenderer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L81">line 81</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="event:canvascreate"><i><span class="type-signature"> (inherited)  </span><a href="#event:canvascreate">canvascreate</a></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L520" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L520" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#event:canvascreate" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    canvascreate event, fired when canvas created.
+</div>
+
+
+
+
+<!-- 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+ -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">canvascreate</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">layer</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">CanvasRenderingContext2D</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">canvas's context</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>gl</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">WebGLRenderingContext2D</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">canvas's webgl context</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#event:canvascreate">Layer#event:canvascreate</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js">renderer/layer/CanvasRenderer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L520">line 520</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="event:renderstart"><i><span class="type-signature"> (inherited)  </span><a href="#event:renderstart">renderstart</a></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L557" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L557" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#event:renderstart" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    renderstart event, fired when layer starts to render.
+</div>
+
+
+
+
+<!-- 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+ -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">renderstart</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">layer</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">CanvasRenderingContext2D</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">canvas's context</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#event:renderstart">Layer#event:renderstart</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js">renderer/layer/CanvasRenderer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L557">line 557</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    <!-- <h2>Constructor</h2> -->
+    
+    <li>
+    
+    <h4 class="name" id="event:renderend"><i><span class="type-signature"> (inherited)  </span><a href="#event:renderend">renderend</a></i>
+    
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L633" class="improvelink">[source]</a>
+        
+    
+    <!-- 
+        <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L633" class="improvelink">[help to improve]</a>
+     -->
+    <!-- <a href="#event:renderend" class="improvelink">[link]</a> -->
+    </h4>
+
+    
+    </li>
+    
+    
+
+
+
+
+<div class="description">
+    renderend event, fired when layer ends rendering.
+</div>
+
+
+
+
+<!-- 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+ -->
+
+
+
+
+
+<!-- event properties -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">renderend</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">layer</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code>
+                    
+                </td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">CanvasRenderingContext2D</span>
+
+
+            
+            </td>
+
+
+
+            
+
+            <td class="description last">canvas's context</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html#event:renderend">Layer#event:renderend</a>
+    </li></ul></dd>
+    
+
+    
+
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+            <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js">renderer/layer/CanvasRenderer.js</a>, <a target="_blank" href="https://github.com/maptalks/maptalks.js/tree/master/src/renderer/layer/CanvasRenderer.js#L633">line 633</a>
+        
+
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav class="page-nav">
+    <h2><a href="https://maptalks.org/maptalks.js/api/1.x/index.html">V1.0.0-rc.33</a></h2><h4>Classes</h4><ul></ul><h5>Map</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Map.html">Map</a></li></ul><h5>Layer</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Layer.html">Layer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/TileSystem.html">TileSystem</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/TileLayer.html">TileLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/GroupTileLayer.html">GroupTileLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/WMSTileLayer.html">WMSTileLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/OverlayLayer.html">OverlayLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/VectorLayer.html">VectorLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/CanvasLayer.html">CanvasLayer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ParticleLayer.html">ParticleLayer</a></li><li><a href="">ImageLayer</a></li></ul><h5>Geometry</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Geometry.html">Geometry</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Path.html">Path</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Marker.html">Marker</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/TextMarker.html">TextMarker</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Label.html">Label</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/TextBox.html">TextBox</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Polygon.html">Polygon</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/LineString.html">LineString</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Curve.html">Curve</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ArcCurve.html">ArcCurve</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/QuadBezierCurve.html">QuadBezierCurve</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/CubicBezierCurve.html">CubicBezierCurve</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ConnectorLine.html">ConnectorLine</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ArcConnectorLine.html">ArcConnectorLine</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Ellipse.html">Ellipse</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Circle.html">Circle</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Sector.html">Sector</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Rectangle.html">Rectangle</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/GeometryCollection.html">GeometryCollection</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/MultiGeometry.html">MultiGeometry</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/MultiPoint.html">MultiPoint</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/MultiLineString.html">MultiLineString</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/MultiPolygon.html">MultiPolygon</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/GeoJSON.html">GeoJSON</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/GeometryEditor.html">GeometryEditor</a></li></ul><h5>Basic types</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Coordinate.html">Coordinate</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Extent.html">Extent</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Point.html">Point</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/PointExtent.html">PointExtent</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Position.html">Position</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Size.html">Size</a></li></ul><h5>Maptool</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/MapTool.html">MapTool</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/DrawTool.html">DrawTool</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/DistanceTool.html">DistanceTool</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/AreaTool.html">AreaTool</a></li></ul><h5>Ui</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.UIComponent.html">ui.UIComponent</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.UIMarker.html">ui.UIMarker</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.InfoWindow.html">ui.InfoWindow</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.ToolTip.html">ui.ToolTip</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.Menu.html">ui.Menu</a></li></ul><h5>Control</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Control.html">control.Control</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Zoom.html">control.Zoom</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.LayerSwitcher.html">control.LayerSwitcher</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Attribution.html">control.Attribution</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Panel.html">control.Panel</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Toolbar.html">control.Toolbar</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/control.Overview.html">control.Overview</a></li></ul><h5>Core</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Ajax.html">Ajax</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Class.html">Class</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/MapboxUtil.html">MapboxUtil</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Util.html">Util</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/DomUtil.html">DomUtil</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/StringUtil.html">StringUtil</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/worker.Actor.html">worker.Actor</a></li></ul><h5>Animation</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/animation.Easing.html">animation.Easing</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/animation.Frame.html">animation.Frame</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/animation.Player.html">animation.Player</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/animation.Animation.html">animation.Animation</a></li></ul><h5>Geo</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/CRS.html">CRS</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.Identity.html">measurer.Identity</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.DEFAULT.html">measurer.DEFAULT</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.Measurer.html">measurer.Measurer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.WGS84Sphere.html">measurer.WGS84Sphere</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.BaiduSphere.html">measurer.BaiduSphere</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.DEFAULT.html">projection.DEFAULT</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.BAIDU.html">projection.BAIDU</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.EPSG3857.html">projection.EPSG3857</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.EPSG4326.html">projection.EPSG4326</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.EPSG9807.html">projection.EPSG9807</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.IDENTITY.html">projection.IDENTITY</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.EPSG4490.html">projection.EPSG4490</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Transformation.html">Transformation</a></li></ul><h5>Handler</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Handler.html">Handler</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/DragHandler.html">DragHandler</a></li></ul><h5>Other</h5><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/CollisionIndex.html">CollisionIndex</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/renderer.CanvasRenderer.html">renderer.CanvasRenderer</a></li></ul><h4>Namespaces</h4><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.html">measurer</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.html">projection</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/renderer.html">renderer</a></li></ul><h4>Mixins</h4><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/Eventable.html">Eventable</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/JSONAble.html">JSONAble</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/measurer.Common.html">measurer.Common</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/projection.Common.html">projection.Common</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Handlerable.html">Handlerable</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/CenterMixin.html">CenterMixin</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/TextEditable.html">TextEditable</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/Renderable.html">Renderable</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/ui.Menuable.html">ui.Menuable</a></li></ul><h3>Global</h3><ul><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#INTERNAL_LAYER_PREFIX">INTERNAL_LAYER_PREFIX</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#RESOURCE_PROPERTIES">RESOURCE_PROPERTIES</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#RESOURCE_SIZE_PROPERTIES">RESOURCE_SIZE_PROPERTIES</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#NUMERICAL_PROPERTIES">NUMERICAL_PROPERTIES</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#COLOR_PROPERTIES">COLOR_PROPERTIES</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#runTaskAsync">runTaskAsync</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#IS_NODE">IS_NODE</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#getDxDyRad">getDxDyRad</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#registerWorkerAdapter">registerWorkerAdapter</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#code">code</a></li><li><a href="https://maptalks.org/maptalks.js/api/1.x/global.html#queryTerrainCoordinates">queryTerrainCoordinates</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Thu Mar 14 2024 17:12:54 GMT+0800 (中国标准时间)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="./Class_ ImageLayer_files/linenumber.js.下载"> </script>
+
+
+<iframe class="api-interceptor" frameborder="none" src="./Class_ ImageLayer_files/index.html" style="height: 100% !important; width: 518px !important; min-width: 1px !important; position: fixed !important; inset: 0px 0px auto auto !important; z-index: 2147483647 !important; transform: translateX(538px) !important; transition: 0.4s !important; box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 15px 2px !important;"></iframe></body></html>
